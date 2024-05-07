@@ -1,0 +1,7 @@
+{
+  "name": "destinos-vacacionales",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
