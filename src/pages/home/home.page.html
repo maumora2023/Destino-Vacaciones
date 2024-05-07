@@ -1,0 +1,48 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Destinos de Viaje</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-searchbar
+    [(ngModel)]="searchTerm"
+    (ionChange)="searchTermChanged($event)"
+    [debounce]="700">
+  </ion-searchbar>
+
+  <ion-list>
+    <ion-item *ngFor="let destino of filteredDestinos">
+      <ion-thumbnail slot="start">
+        <img [src]="destino.image">
+      </ion-thumbnail>
+      <ion-label>
+        <h2 class="destino-name">{{ destino.name }}</h2>
+        <p class="destino-country">{{ destino.country }}</p>
+      </ion-label>
+      <ion-button fill="clear" slot="end" (click)="openCostRegistration(destino)">
+        <ion-icon name="airplane-outline"></ion-icon>
+      </ion-button>
+      <ion-label class="ion-text-end" slot="end">
+        {{ destino.cost | currency:'CLP':'symbol':'1.0-0' }}
+      </ion-label>
+      <ion-button fill="clear" slot="end" (click)="openCamera(destino)">
+        <ion-icon name="camera-outline"></ion-icon>
+      </ion-button>      
+      <ion-button color="danger" fill="clear" slot="end" (click)="confirmDelete(destino.id)">
+        <ion-icon name="trash-outline"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-list>
+
+  <ion-list>
+    <ion-item *ngFor="let result of apiSearchResults">
+      <ion-label>
+        <h2>{{ result.name }}</h2>
+      </ion-label>
+      <ion-button fill="outline" slot="end" (click)="addToWishList(result)">
+        Añadir a Lista de Deseos
+      </ion-button>
+    </ion-item>
+  </ion-list>
+</ion-content>

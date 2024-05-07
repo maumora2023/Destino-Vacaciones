@@ -1,0 +1,55 @@
+/* Estilos para el contenedor principal */
+#container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+/* Estilos para texto fuerte */
+#container strong {
+  font-size: 20px;
+  line-height: 1.3; /* Ajustado para mejorar la legibilidad */
+}
+
+/* Estilos para texto normal */
+#container p {
+  font-size: 16px;
+  line-height: 1.5; /* Ajustado para mejorar la legibilidad */
+  color: #8c8c8c;
+  margin: 0;
+}
+
+/* Estilos para enlaces */
+#container a {
+  text-decoration: none;
+}
+
+/* Estilos para elementos ion-item */
+ion-item {
+  --padding-start: 0;
+  --inner-padding-end: 0;
+  --min-height: 100px;
+}
+
+/* Estilos para imágenes dentro de ion-thumbnail */
+ion-thumbnail img {
+  width: 300px; /* Tamaño ajustado para imágenes dentro de ion-thumbnail */
+}
+
+/* Estilos para nombres de destino */
+.destination-name {
+  font-size: 14px;
+}
+
+/* Estilos para países de destino */
+.destination-country {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* Estilos para la lista de ion-list */
+ion-list {
+  margin: 0 20px; /* Simplificado para aplicar margen horizontal uniforme */
+}
